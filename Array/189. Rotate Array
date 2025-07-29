@@ -1,0 +1,19 @@
+class Solution {
+    public void rev(int start,int end,int[] nums){
+            int temp;
+            while(start<end) {
+                temp=nums[start];
+                nums[start]=nums[end];
+                nums[end]=temp;
+                start++;
+                end--;
+            }
+        }
+    public void rotate(int[] nums, int k) {
+        int l=nums.length;
+        k=k%l;
+        rev(0,l-1,nums);
+        rev(0,k-1,nums);
+        rev(k,l-1,nums);
+            }
+}
